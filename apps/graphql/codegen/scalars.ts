@@ -48,6 +48,7 @@ export const codegen_scalars = {
   ObjectID: "string",
   PhoneNumber: "string",
   Port: "number",
+
   PositiveFloat: "number",
   PositiveInt: "number",
   PostalCode: "string",
