@@ -5,7 +5,11 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "codegen": "npx ts-node ./codegen/config.ts && graphql-codegen --config ./codegen/config.ts"
+    "codegen": "npx ts-node ./codegen/config.ts && graphql-codegen --config ./codegen/config.ts",
+    "build": "yarn codegen && tsc",
+    "standalone": "npx ts-node run.ts",
+    "dev": "npx watch.ts",
+    "start": "node dist/run.js"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",
@@ -13,6 +17,8 @@
     "@graphql-codegen/typescript-resolvers": "^4.0.1",
     "@graphql-tools/schema": "^10.0.0",
     "@types/graphql-validation-complexity": "^0.4.3",
+    "chokidar": "^3.5.3",
+    "nodemon": "^3.0.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {

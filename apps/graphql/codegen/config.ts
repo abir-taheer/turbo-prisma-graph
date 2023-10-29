@@ -27,7 +27,7 @@ export const codegen_config: CodegenConfig = {
     [path.join(graphql__generated_folder_path, "index.ts")]: {
       plugins: ["typescript", "typescript-resolvers"],
       config: {
-        contextType: contextPath + "#GraphQLContext",
+        contextType: "@abir-taheer/graphql/context#GraphQLContext",
       },
     },
     [path.join(graphql__generated_folder_path, "graphql.schema.json")]: {

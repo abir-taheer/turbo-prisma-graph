@@ -3,6 +3,6 @@
   "compilerOptions": {
     "paths": {
       "@abir-taheer/graphql/*": ["./*"]
-    },
+    }
   }
 }
