@@ -1,3 +1,4 @@
+import { mappers } from "@abir-taheer/graphql/codegen/mappers";
 import type { CodegenConfig } from "@graphql-codegen/cli/typings";
 import { fullSchemaString } from "@abir-taheer/graphql/codegen/fullSchema";
 import { ensureDirExists } from "@abir-taheer/graphql/utils/fs";
@@ -11,8 +12,6 @@ const graphql__generated_folder_path = path.join(
   graphql_package_dir_path,
   "generated/graphql/",
 );
-
-const contextPath = path.join(graphql_package_dir_path, "context");
 
 const schemaPath = path.join(graphql__generated_folder_path, "schema.graphql");
 
@@ -28,6 +27,8 @@ export const codegen_config: CodegenConfig = {
       plugins: ["typescript", "typescript-resolvers"],
       config: {
         contextType: "@abir-taheer/graphql/context#GraphQLContext",
+        typesPrefix: "IGraphQL",
+        mappers,
       },
     },
     [path.join(graphql__generated_folder_path, "graphql.schema.json")]: {

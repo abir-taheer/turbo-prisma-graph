@@ -6,9 +6,10 @@
   "license": "MIT",
   "scripts": {
     "codegen": "npx ts-node ./codegen/config.ts && graphql-codegen --config ./codegen/config.ts",
+    "postinstall": "yarn codegen",
     "build": "yarn codegen && tsc",
     "standalone": "npx ts-node run.ts",
-    "dev": "npx watch.ts",
+    "dev": "ts-node watch.ts",
     "start": "node dist/run.js"
   },
   "devDependencies": {
@@ -24,6 +25,7 @@
   "dependencies": {
     "@apollo/server": "^4.9.5",
     "graphql": "^16.8.1",
+    "graphql-scalars": "^1.22.4",
     "graphql-validation-complexity": "^0.4.2"
   }
 }

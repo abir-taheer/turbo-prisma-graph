@@ -1,4 +1,4 @@
-import { QueryResolvers } from "@abir-taheer/graphql/generated/graphql";
+import { IGraphQLQueryResolvers } from "@abir-taheer/graphql/generated/graphql";
 
-export const greeting: QueryResolvers["greeting"] = (_, { name }) =>
+export const greeting: IGraphQLQueryResolvers["greeting"] = (_, { name }) =>
   ["Hey", name].filter(Boolean).join(" ") + "!";
