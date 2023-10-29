@@ -1,5 +1,6 @@
-import { User } from "@abir-taheer/models";
+import { PrismaClient, User } from "@abir-taheer/models";
 
 export type GraphQLContext = {
-  user?: User;
+  db: PrismaClient;
+  user: User | null;
 };

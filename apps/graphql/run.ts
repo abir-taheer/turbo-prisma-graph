@@ -1,7 +1,13 @@
+import {
+  GraphQLContext,
+  getStandaloneServerContext,
+} from "@abir-taheer/graphql/context";
 import { server } from "@abir-taheer/graphql/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
-startStandaloneServer(server).then(({ url }) => {
+startStandaloneServer<GraphQLContext>(server, {
+  context: getStandaloneServerContext,
+}).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`);
 });
 

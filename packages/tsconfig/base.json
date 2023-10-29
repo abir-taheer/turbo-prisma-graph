@@ -8,6 +8,7 @@
     "inlineSources": false,
     "isolatedModules": true,
     "moduleResolution": "node",
+    "target": "ES6",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "preserveWatchOutput": true,
