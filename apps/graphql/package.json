@@ -5,7 +5,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "codegen": "npx graphql-codegen --config ./codegen/config.ts",
+    "codegen": "ts-node codegen/config.ts && npx graphql-codegen --config ./codegen/config.ts",
     "postinstall": "yarn codegen",
     "build": "yarn codegen && tsc",
     "standalone": "npx ts-node run.ts",
